@@ -6,7 +6,10 @@ import { httpService } from "@/general/services";
 type TContext = ActionContext<IState, IState>;
 
 const actions = {
-  async [ActionTypes.AddNewRecord](store: TContext, { newDigit }: IActionAddNewRecord) {
+  async [ActionTypes.AddNewRecord](
+    store: TContext,
+    { newDigit }: IActionAddNewRecord
+  ) {
     if (newDigit === ButtonNames.Equals) {
       await httpService.createRecord(store.state.currentCalculation);
     }
