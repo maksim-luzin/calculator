@@ -13,10 +13,10 @@ const currentValuePosition = computed(
 );
 
 const clickHandler = () => {
-  if (!currentValuePosition.value) {
-    store.commit(MutationTypes.UndoRecord);
-  } else {
+  if (currentValuePosition.value > 1) {
     store.commit(MutationTypes.UndoDigit);
+  } else {
+    store.commit(MutationTypes.UndoRecord);
   }
 };
 </script>

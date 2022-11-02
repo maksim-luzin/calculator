@@ -11,7 +11,10 @@ const actions = {
     { newDigit }: IActionAddNewRecord
   ) {
     if (newDigit === ButtonNames.Equals) {
-      await httpService.createRecord(store.state.currentCalculation);
+      try {
+        await httpService.createRecord(store.state.currentCalculation);
+        // eslint-disable-next-line no-empty
+      } catch {}
     }
     store.commit(MutationTypes.AddNewRecord, newDigit);
   },

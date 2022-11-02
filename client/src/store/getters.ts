@@ -72,6 +72,12 @@ const getters = {
   hasCurrentValueDot({ isCurrentValueDot }: IState) {
     return isCurrentValueDot;
   },
+  getCalculationLength({ currentCalculation }: IState) {
+    return currentCalculation.length;
+  },
+  getCurrentCalculationPosition(state: IState) {
+    return state.currentCalculationPosition;
+  },
 };
 
 export { getters };

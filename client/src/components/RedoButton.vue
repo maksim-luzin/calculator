@@ -12,12 +12,16 @@ const currentValuePosition = computed(
   () => store.getters.getCurrentValuePosition
 );
 const currentValueLength = computed(() => store.getters.getCurrentValueLength);
+const calculationLength = computed(() => store.getters.getCalculationLength);
+const currentCalculationPosition = computed(
+  () => store.getters.getCurrentCalculationPosition
+);
 
 const clickHandler = () => {
-  if (currentValuePosition.value === currentValueLength.value - 1) {
-    store.commit(MutationTypes.RedoRecord);
-  } else {
+  if (currentValuePosition.value < currentValueLength.value) {
     store.commit(MutationTypes.RedoDigit);
+  } else if (currentCalculationPosition.value < calculationLength.value) {
+    store.commit(MutationTypes.RedoRecord);
   }
 };
 </script>
