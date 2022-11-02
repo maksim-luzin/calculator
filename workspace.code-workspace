@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "server"
+    }
+  ],
+  "settings": {
+    "cSpell.words": [
+      "fontawesome",
+      "formik",
+      "fortawesome",
+      "fullfill",
+      "middlewares",
+      "typeorm",
+      "uuidv",
+	  "vuex",
+	  "nestjs",
+	  "linebreak-style"
+    ]
+  }
+}
